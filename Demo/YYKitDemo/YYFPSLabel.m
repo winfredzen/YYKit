@@ -40,13 +40,14 @@
         _font = [UIFont fontWithName:@"Courier" size:14];
         _subFont = [UIFont fontWithName:@"Courier" size:4];
     }
-    
+    //弱引用
     _link = [CADisplayLink displayLinkWithTarget:[YYWeakProxy proxyWithTarget:self] selector:@selector(tick:)];
     [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     return self;
 }
 
 - (void)dealloc {
+    //从run loop中移除link
     [_link invalidate];
 }
 

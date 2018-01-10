@@ -52,7 +52,7 @@
     _tableView.backgroundView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_tableView];
     self.view.backgroundColor = kWBCellBackgroundColor;
-    
+    //显示fps的label
     _fpsLabel = [YYFPSLabel new];
     [_fpsLabel sizeToFit];
     _fpsLabel.bottom = self.view.height - kWBCellPadding;
@@ -66,7 +66,7 @@
         _tableView.height += 20;
     }
     
-    
+    //指示器
     self.navigationController.view.userInteractionEnabled = NO;
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     indicator.size = CGSizeMake(80, 80);
